@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+#
+# VyronLess's vimrc installer.
+
+repo_path=$HOME/.vl-vim
+
+check_variable() {
+    if test ! $(which vim); then
+        echo "Error: vim not found! Please install it first."
+        exit 1
+    fi
+
+    if [ -e $repo_path ]; then
+        echo "Error: $repo_path has already exist! Please remove it before install."
+        exit 1
+    fi
+}
+
+download_repo() {
+    git clone https://github.com/VyronLee/vimrc.git $repo_path
+    if [ ! "$?" -eq '0' ]; then
+        echo "Error: clone repository failed!"
+        exit 1
+    fi
+
+    pushd $repo_path
+    git submodule init && git submodule update --recursive 
+    if [ ! "$?" -eq '0' ]; then
+        echo "Error: clone submodule failed!"
+        exit 1
+    fi
+    popd
+}
+
+link_files() {
+    ln -sf $HOME/.vl-vim/vimrc.symlink $HOME/.vimrc
+    ln -sf $HOME/.vl-vim/vim.symlink $HOME/.vim
+}
+
+###############################################
+## main
+
+check_variable
+download_repo
+link_files
+$repo_path/install.sh
+

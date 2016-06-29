@@ -1,0 +1,4 @@
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'rdnetto/YCM-Generator'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'

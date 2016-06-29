@@ -1,0 +1,48 @@
+priority -50
+
+extends lua
+
+#override parent lua
+priority -49
+
+##########################################
+#  Custom Snippets for the Lua language  #
+##########################################
+
+#file header
+snippet header "File header" b
+--------------------------------------------------------------
+--       @file  `!p snip.rv = snip.fn`
+--      @brief  ${0:Edit description here.}
+--
+--     @author  `!v g:snips_author`, `!v g:snips_email`
+--
+--   @internal
+--    Modified  `date +%Y-%m-%d\ %H:%M`
+--     Company  `!v g:snips_company`
+--   Copyright  Copyright (c) `date +%Y`, `!v g:snips_author`
+--============================================================
+endsnippet
+
+#function brief
+snippet brieffunc "Function brief" b
+--[[
+-- @brief  ${0:function brief.}
+-- @param  ${1:param}
+-- @return ${2:return}
+--]]
+endsnippet
+
+#class
+snippet class "class" b
+--[
+-- @class ${1/\(.*\)/$1/g}
+-- @brief ${3:class-description}
+--]
+local ${1:classname} = class("${1/\(.*\)/$1/g}"${2:[, parent-class]})
+
+${4:class-members}
+
+return ${1/\(.*\)/$1/g}
+endsnippet
+
