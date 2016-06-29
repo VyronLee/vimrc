@@ -3,7 +3,7 @@
 # VyronLess's vimrc installer.
 
 repo_path=$HOME/.vl-vim
-repo_branch="develop"
+repo_branch="master"
 
 check_variable() {
     if test ! $(which vim); then
