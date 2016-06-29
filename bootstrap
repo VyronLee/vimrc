@@ -3,6 +3,7 @@
 # VyronLess's vimrc installer.
 
 repo_path=$HOME/.vl-vim
+repo_branch="develop"
 
 check_variable() {
     if test ! $(which vim); then
@@ -17,7 +18,7 @@ check_variable() {
 }
 
 download_repo() {
-    git clone https://github.com/VyronLee/vimrc.git $repo_path
+    git clone -b $repo_branch https://github.com/VyronLee/vimrc.git $repo_path
     if [ ! "$?" -eq '0' ]; then
         echo "Error: clone repository failed!"
         exit 1
@@ -45,3 +46,6 @@ download_repo
 link_files
 $repo_path/install.sh
 
+echo "Install finished!"
+
+exit 0

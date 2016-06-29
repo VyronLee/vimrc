@@ -12,7 +12,10 @@ install_vim_plugins() {
 initial_plugins() {
     #compile YouCompleteMe plugin
     pushd ~/.vim/bundle/YouCompleteMe
-    python install.py --all
+    python install.py --clang-completer --omnisharp-completer --tern-completer || {
+        echo "Error: install youcompleteme failed!"
+        exit 1
+    }
     popd
 }
 
