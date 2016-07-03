@@ -290,28 +290,7 @@
     " Easier formatting
     nnoremap <silent> <leader>q gwip
 
-    nmap <silent> <leader>/ :set nohl<CR>
-
-    " From https://github.com/vheon/home/blob/ea91f443b33bc15d0deaa34e172a0317db63a53d/.vim/vimrc#L330-L348
-    " When switching colorscheme in terminal vim change the profile in iTerm as well.
-    if !has('gui_running')
-        function! s:change_iterm2_profile()
-            let dual_colorschemes = ["solarized"]
-            if exists('g:colors_name')
-                let profile = g:colors_name
-                if index(dual_colorschemes, g:colors_name) >= 0
-                    let profile .= '_'.&background
-                endif
-                let escape = '\033]50;SetProfile='.profile.'\x7'
-                if exists('$TMUX')
-                    let escape = '\033Ptmux;'.substitute(escape, '\\033', '\\033\\033', 'g').'\033\\'
-                endif
-                silent call system("printf '".escape."' > /dev/tty")
-            endif
-        endfunction
-
-        Autocmd VimEnter,ColorScheme * call s:change_iterm2_profile()
-    endif
+    nmap <silent> <leader>/ :nohl<CR>
 " }
 
 " Functions {
