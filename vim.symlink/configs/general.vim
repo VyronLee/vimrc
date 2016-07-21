@@ -164,7 +164,7 @@
     set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
     "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
     " Remove trailing whitespaces and ^M chars
-    autocmd FileType c,cpp,java,javascript,python,xml,yml,lua autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+    autocmd FileType c,cpp,java,javascript,python,xml,yml,lua,cs autocmd BufWritePre <buffer> call StripTrailingWhitespace()
 " }
 
 " Key (re)Mappings {
