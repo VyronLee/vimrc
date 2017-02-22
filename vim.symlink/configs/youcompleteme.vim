@@ -7,6 +7,6 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 set completeopt-=preview
 
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
-nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gi :YcmCompleter GoToImplementationElseDeclaration<CR>
 nnoremap <C-y> :YcmCompleter
