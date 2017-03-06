@@ -1,0 +1,18 @@
+extends py
+
+#override parent py
+priority -49
+
+#file header
+snippet header "File header" b
+#------------------------------------------------------------
+#       @file  `!p snip.rv = snip.fn`
+#      @brief  ${0:Edit description here.}
+#
+#     @author  `!v g:snips_author`, `!v g:snips_email`
+#
+#   @internal
+#    Modified  `date +%Y-%m-%d\ %H:%M`
+#   Copyright  Copyright (c) `date +%Y`, `!v g:snips_author`
+#============================================================
+endsnippet
