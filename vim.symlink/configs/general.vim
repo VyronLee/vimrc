@@ -109,6 +109,10 @@
     highlight clear SignColumn      " SignColumn should match background
     highlight clear LineNr          " Current line number row will have same background color in relative mode
 
+    set t_ZH=[3m
+    set t_ZR=[23m
+    highlight Comment cterm=italic  " Show comment as italic
+
     if has('cmdline_info')
         set ruler                   " Show the ruler
         set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
