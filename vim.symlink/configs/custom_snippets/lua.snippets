@@ -12,31 +12,27 @@ priority -49
 #file header
 snippet header "File header" b
 --------------------------------------------------------------
---       @file  `!p snip.rv = snip.fn`
---      @brief  ${0:Edit description here.}
+--        File:  `!p snip.rv = snip.fn`
+--       Brief:  ${0:Edit description here.}
 --
---     @author  `!v g:snips_author`, `!v g:snips_email`
+--      Author:  `!v g:snips_author`, `!v g:snips_email`
 --
---   @internal
---    Modified  `date +%Y-%m-%d\ %H:%M`
---   Copyright  Copyright (c) `date +%Y`, `!v g:snips_author`
+--    Modified:  `date +%Y-%m-%d\ %H:%M`
+--   Copyright:  Copyright (c) `date +%Y`, `!v g:snips_author`
 --============================================================
 endsnippet
 
 #function brief
 snippet brieffunc "Function brief" b
---[[
--- @brief  ${0:function brief.}
+--- ${0:function brief.}
 -- @param  ${1:param}
 -- @return ${2:return}
---]]
 endsnippet
 
 #class
 snippet class "class" b
---[
+--- ${0:class brief.}
 -- @class ${1/\(.*\)/$1/g}
--- @brief ${3:class-description}
 --]
 local ${1:classname} = class("${1/\(.*\)/$1/g}"${2:[, parent-class]})
 
