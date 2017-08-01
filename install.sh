@@ -2,8 +2,23 @@
 #
 # This installs all vim plugins according to vundle configuration,
 
+install_powerline_fonts() {
+    git clone https://github.com/powerline/fonts.git
+    cd fonts && ./install.sh
+    cd .. && rm -rf fonts
+}
+
+install_bundles() {
+    env SHELL="/bin/sh" vim -u "$HOME/.vim/vundle.vim" +BundleInstall +BundleClean +qall
+}
+
 install_vim_plugins() {
-    env SHELL="/bin/sh" vim -u "$HOME/.vim/vundle.vim" +BundleInstall +BundleClean +qall || {
+    install_powerline_fonts || {
+        echo "Error: install powerline fonts failed!"
+        exit 1
+    }
+
+    install_bundles || {
         echo "Error: install vim plugins failed!"
         exit 1
     }
