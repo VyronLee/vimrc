@@ -5,4 +5,6 @@ Bundle 'mattn/gist-vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
-Bundle 'ludovicchabant/vim-gutentags'
+
+"Default is not enabled, may lead to performance issue.
+"Bundle 'ludovicchabant/vim-gutentags'

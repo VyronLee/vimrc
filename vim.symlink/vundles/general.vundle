@@ -11,11 +11,16 @@ Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'dyng/ctrlsf.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'vim-scripts/sessionman.vim'
-Bundle 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
-Bundle 'powerline/fonts'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'mbbill/undotree'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'mhinz/vim-signify'
 Bundle 'pearofducks/ansible-vim'
+Bundle 'tweekmonster/startuptime.vim'
+
+"==> For powline user, please uncomment this
+"Bundle 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
+"==> Otherwise, install airline by default
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
